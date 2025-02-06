@@ -1,1 +1,1 @@
-# EMBEDDED_LINUXGIT repo for my Embedded Linux Projects & Side hustles
+# EMBEDDED_LINUX GIT repo for my Embedded Linux Projects & Side hustles
