@@ -1,0 +1,27 @@
+1) We want to make this script globally reachable (i.e. you can run from anywhere in the system
+without indicating its path, so that we could use “userdef” instead of “./userdef”).
+
+    m) How can we achieve this (2 methods) ? Write the steps to these 2 methods in a text file.
+        -Method1: using alias userdef="sudo /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part1/userdef.sh"
+        -Method2: we could make move it in /usr/local/bin/
+    n) We would like this change to be permanent, how can we do this?
+        -Method1: we add alias script in .bashrc file 
+        -Method2: no need once we move it in /usr/local/bin/
+    o) We just made this change permanent, but we don’t want to wait until another terminal is
+    opened, we would like to make this change NOW, and in this terminal. What could we do?
+        -Method1: we source .bashrc file 
+        -Method2: no need once we move it in /usr/local/bin/
+
+2) After running the second script, do the following:
+    g) Switch to the newly created user
+        - su - ${new_user}
+    h) Display all the files inside the extracted folder recursively and with long listing format
+        - ls -Ril
+    i) Change to owner of this directory recursively to be the new user
+        - sudo chown -R ${new_user} ${directory}
+    j) Again, display all the files inside the extracted folder recursively and with long listing format
+        - ls -R
+    k) Search for the word “file” in the extracted directory recursively
+        - grep -r "file" .
+    l) Remove all the files ending with “.c”
+        - rm *.c
