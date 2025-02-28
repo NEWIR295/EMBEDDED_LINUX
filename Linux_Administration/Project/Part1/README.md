@@ -46,20 +46,20 @@ This part contains two Bash scripts:
    ```sh
    alias userdef="sudo /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part1/userdef.sh"
    ```
-   `![Using alias command in terminal](ScreenShots/question1_method1_m.png)`
+   ![Using alias command in terminal](ScreenShots/question1_method1_m.png)
 2. **Moving the script to `/usr/local/bin/`**
    ```sh
    sudo mv /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part1/userdef.sh /usr/local/bin/userdef
    sudo chmod +x /usr/local/bin/userdef
    ```
-   `![Move userdef script to /usr/local/bin/](ScreenShots/question1_method2.png)`
+   ![Move userdef script to /usr/local/bin/](ScreenShots/question1_method2.png)
 
 ### **2) Making the change permanent**
 - **Method 1:** Add the alias command to `.bashrc`
   ```sh
   echo 'alias userdef="sudo /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part1/userdef.sh"' >> ~/.bashrc
   ```
-  `![Using alias command in .bashrc file](ScreenShots/question1_method1_n_o.png)`
+  ![Using alias command in .bashrc file](ScreenShots/question1_method1_n_o.png)
 
 - **Method 2:** No extra steps are needed once moved to `/usr/local/bin/`
 
@@ -79,37 +79,37 @@ This part contains two Bash scripts:
    ```sh
    su - <new_user>
    ```
-   `![Switch to the new user](ScreenShots/question2_switchUser.png)`
+   ![Switch to the new user](ScreenShots/question2_switchUser.png)
    
 2. **Display all files inside the extracted folder recursively with long listing format**
    ```sh
    ls -Ril
    ```
-   `![Display all files inside the directory](ScreenShots/question2_Display1.png)`
+   ![Display all files inside the directory](ScreenShots/question2_Display1.png)
 
 3. **Change the owner of the directory recursively to the new user**
    ```sh
    sudo chown -R <new_user> <directory>
    ```
-   `![Changing directory owner to the new user](ScreenShots/question2_changeOwner.png)`
+   ![Changing directory owner to the new user](ScreenShots/question2_changeOwner.png)
 
 4. **Again, display all files inside the extracted folder recursively with long listing format**
    ```sh
    ls -Ril
    ```
-   `![Display all files inside the directory](ScreenShots/question2_Display2.png)`
+   ![Display all files inside the directory](ScreenShots/question2_Display2.png)
 
 5. **Search for the word "file" in the extracted directory recursively**
    ```sh
    grep -r "file" .
    ```
-   `![Search for word "file" inside the directory](ScreenShots/question2_grepFile.png)`
+   ![Search for word "file" inside the directory](ScreenShots/question2_grepFile.png)
 
 6. **Remove all files ending with `.c`**
    ```sh
    rm *.c
    ```
-   `![Delete all c files inside the directory](ScreenShots/question2_DeleteC.png)`
+   ![Delete all c files inside the directory](ScreenShots/question2_DeleteC.png)
 
 ---
 
