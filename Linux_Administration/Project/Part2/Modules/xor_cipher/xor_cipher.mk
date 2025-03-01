@@ -35,18 +35,18 @@ DYNAMIC_LIB = $(LIB_DIR)/libxor_cipher.so
 xor_all: $(LIB_DIR)/libxor_cipher.so
 
 $(LIB_DIR)/libxor_cipher.so: $(XOBJ)
-	if [ ! -d $(LIB_DIR) ]; then mkdir -p $(LIB_DIR); fi
-	if [ ! -d $(OBJ_DIR) ]; then mkdir -p $(OBJ_DIR); fi
+	@if [ ! -d $(LIB_DIR) ]; then mkdir -p $(LIB_DIR); fi
+	@if [ ! -d $(OBJ_DIR) ]; then mkdir -p $(OBJ_DIR); fi
 	$(CC) $(DYNAMIC_LIB_FLAGS) -o $(LIB_DIR)/libxor_cipher.so $(XOBJ)
 #	export LD_LIBRARY_PATH=$(LIB_DIR) 
 #	echo "export LD_LIBRARY_PATH=$(LIB_DIR)" >> ~/.bashrc
 
 $(OBJ_DIR)/xor_decrypt.o: $(XOR_CIPHER_SOURCE_DIR)/xor_decrypt.c
-	if [ ! -d $(OBJ_DIR) ]; then mkdir -p $(OBJ_DIR); fi
+	@if [ ! -d $(OBJ_DIR) ]; then mkdir -p $(OBJ_DIR); fi
 	$(CC) $(CFLAGS) -c $(XOR_CIPHER_SOURCE_DIR)/xor_decrypt.c -o $(OBJ_DIR)/xor_decrypt.o
 
 $(OBJ_DIR)/xor_encrypt.o: $(XOR_CIPHER_SOURCE_DIR)/xor_encrypt.c
-	if [ ! -d $(OBJ_DIR) ]; then mkdir -p $(OBJ_DIR); fi
+	@if [ ! -d $(OBJ_DIR) ]; then mkdir -p $(OBJ_DIR); fi
 	$(CC) $(CFLAGS) -c $(XOR_CIPHER_SOURCE_DIR)/xor_encrypt.c -o $(OBJ_DIR)/xor_encrypt.o
 
 

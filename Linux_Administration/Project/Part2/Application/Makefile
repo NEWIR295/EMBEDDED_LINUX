@@ -33,16 +33,16 @@ include /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part2/Modules
 
 
 all:  xor_all caesar_all  $(OBJ_DIR_)/$(OBJ_)
-	if [ ! -d $(OUT_DIR_) ]; then mkdir -p $(OUT_DIR_); fi
-	if [ ! -d $(LIB_DIR_) ]; then mkdir -p $(LIB_DIR_); fi
-	if [ ! -d $(OBJ_DIR_) ]; then mkdir -p $(OBJ_DIR_); fi
+	@if [ ! -d $(OUT_DIR_) ]; then mkdir -p $(OUT_DIR_); fi
+	@if [ ! -d $(LIB_DIR_) ]; then mkdir -p $(LIB_DIR_); fi
+	@if [ ! -d $(OBJ_DIR_) ]; then mkdir -p $(OBJ_DIR_); fi
 	$(CC)  $(OBJ_DIR_)/app.o -L$(LIB_DIR_) -lcaesar_cipher -lxor_cipher -o $(APP_DIR_)/output
 	@echo "							Run the following before executing the application:"
 	@echo 'export LD_LIBRARY_PATH=$(LIB_DIR_)'
 	@echo "Then execute: ./output"
 
 $(OBJ_DIR_)/app.o: $(APP_DIR_)/app.c
-	if [ ! -d $(OBJ_DIR_) ]; then mkdir -p $(OBJ_DIR_); fi
+	@if [ ! -d $(OBJ_DIR_) ]; then mkdir -p $(OBJ_DIR_); fi
 	$(CC) -c $(APP_DIR_)/app.c -o $(OBJ_DIR_)/app.o $(CFLAGS_)
 
 

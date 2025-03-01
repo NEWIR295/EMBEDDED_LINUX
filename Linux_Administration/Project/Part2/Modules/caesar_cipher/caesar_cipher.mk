@@ -33,17 +33,17 @@ caesar_all: $(LIB_DIR)/libcaesar_cipher.a
 
 
 $(LIB_DIR)/libcaesar_cipher.a: $(COBJ)
-	if [ ! -d $(LIB_DIR) ]; then mkdir -p $(LIB_DIR); fi
-	if [ ! -d $(OBJ_DIR) ]; then mkdir -p $(OBJ_DIR); fi
+	@if [ ! -d $(LIB_DIR) ]; then mkdir -p $(LIB_DIR); fi
+	@if [ ! -d $(OBJ_DIR) ]; then mkdir -p $(OBJ_DIR); fi
 	$(AR) $(STATIC_LIB_FLAGS) $(LIB_DIR)/libcaesar_cipher.a $(COBJ)
 
 
 $(OBJ_DIR)/caesar_decrypt.o: $(CAESAR_CIPHER_SOURCE_DIR)/caesar_decrypt.c
-	if [ ! -d $(OBJ_DIR) ]; then mkdir -p $(OBJ_DIR); fi
+	@if [ ! -d $(OBJ_DIR) ]; then mkdir -p $(OBJ_DIR); fi
 	$(CC) $(CFLAGS) -c $(CAESAR_CIPHER_SOURCE_DIR)/caesar_decrypt.c -o $(OBJ_DIR)/caesar_decrypt.o
 
 $(OBJ_DIR)/caesar_encrypt.o: $(CAESAR_CIPHER_SOURCE_DIR)/caesar_encrypt.c
-	if [ ! -d $(OBJ_DIR) ]; then mkdir -p $(OBJ_DIR); fi
+	@if [ ! -d $(OBJ_DIR) ]; then mkdir -p $(OBJ_DIR); fi
 	$(CC) $(CFLAGS) -c $(CAESAR_CIPHER_SOURCE_DIR)/caesar_encrypt.c -o $(OBJ_DIR)/caesar_encrypt.o
 
 
