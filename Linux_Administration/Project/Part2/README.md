@@ -61,7 +61,7 @@ Then execute the program:
 ```sh
 ./output
 ```  
-   ![Makefile building and executing the program](ScreenShots/Makefile.png)
+   ![Makefile building and executing the program ](ScreenShots/Makefile.png)
 
 
 ## Cleaning Up  
