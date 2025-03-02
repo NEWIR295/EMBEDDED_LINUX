@@ -18,6 +18,7 @@ file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/../Application/out/gens)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/../Application/out/lib)
 # Include the header files of the library
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/inc)
+
 # Add the source files of the library
 add_library(caesar_cipher STATIC
     ${CMAKE_CURRENT_SOURCE_DIR}/src/caesar_encrypt.c

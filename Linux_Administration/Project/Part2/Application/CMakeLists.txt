@@ -35,6 +35,7 @@ link_directories(${CMAKE_SOURCE_DIR}/out/lib)
 target_link_libraries(output caesar_cipher xor_cipher)
 # Add the dependencies of the libraries 
 add_dependencies(output caesar_cipher xor_cipher)
+
 # Set the output directory of the executable 
 set_target_properties(output PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR} 

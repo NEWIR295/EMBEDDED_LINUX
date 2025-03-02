@@ -18,6 +18,7 @@ file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/../Application/out/gens)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/../Application/out/lib)
 # Include the header files of the library
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/inc)
+
 # Add the source files of the library
 add_library(xor_cipher SHARED
     ${CMAKE_CURRENT_SOURCE_DIR}/src/xor_encrypt.c
