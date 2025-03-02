@@ -1,5 +1,6 @@
 # Linux Administration Project - Part 2
 ## Author: Mohamed Newir  
+  [LinkedIn Profile](https://www.linkedin.com/in/mohamed-newir-a8a572182)
 
 ## Project Overview  
 This project is part of Linux administration course that involves building an application using Makefiles and CMake. The project consists of:  
@@ -133,8 +134,3 @@ make clean_caesar_cipher
 - Compiles `xor_encrypt.c` and `xor_decrypt.c` into a shared library `libxor_cipher.so`.
 
 ---
-
-## Author
-
-- **Mohamed Newir**  
-  [LinkedIn Profile](https://www.linkedin.com/in/mohamed-newir-a8a572182)
