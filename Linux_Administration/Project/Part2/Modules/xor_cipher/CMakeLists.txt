@@ -34,11 +34,13 @@ set_target_properties(xor_cipher PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/../Application/out/gens
 )
 
-add_custom_command(TARGET xor_cipher PRE_LINK
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+# there was a problem as the object files were in the build directory not in out/gens directory
+# so I had asked Grok for help and he told me to use the following command to rename the object files ('__') , So Sad
+add_custom_command(TARGET xor_cipher POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E rename
     ${CMAKE_BINARY_DIR}/xor_cipher_build/CMakeFiles/xor_cipher.dir/src/xor_encrypt.c.o
     ${CMAKE_SOURCE_DIR}/../Application/out/gens/xor_encrypt.o
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+    COMMAND ${CMAKE_COMMAND} -E rename
     ${CMAKE_BINARY_DIR}/xor_cipher_build/CMakeFiles/xor_cipher.dir/src/xor_decrypt.c.o
     ${CMAKE_SOURCE_DIR}/../Application/out/gens/xor_decrypt.o
 )

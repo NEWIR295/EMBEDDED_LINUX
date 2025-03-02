@@ -33,11 +33,13 @@ set_target_properties(caesar_cipher PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/../Application/out/gens
 )
 
-add_custom_command(TARGET caesar_cipher PRE_LINK
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+# there was a problem as the object files were in the build directory not in out/gens directory
+# so I had asked Grok for help and he told me to use the following command to rename the object files ('__') , So Sad
+add_custom_command(TARGET caesar_cipher POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E rename
     ${CMAKE_BINARY_DIR}/caesar_cipher_build/CMakeFiles/caesar_cipher.dir/src/caesar_encrypt.c.o
     ${CMAKE_SOURCE_DIR}/../Application/out/gens/caesar_encrypt.o
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+    COMMAND ${CMAKE_COMMAND} -E rename
     ${CMAKE_BINARY_DIR}/caesar_cipher_build/CMakeFiles/caesar_cipher.dir/src/caesar_decrypt.c.o
     ${CMAKE_SOURCE_DIR}/../Application/out/gens/caesar_decrypt.o
 )

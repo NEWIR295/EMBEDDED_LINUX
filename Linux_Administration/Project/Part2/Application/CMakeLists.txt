@@ -42,8 +42,10 @@ set_target_properties(output PROPERTIES
     LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/out/gens
 )
 
-add_custom_command(TARGET output PRE_LINK
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+# there was a problem as the object files were in the build directory not in out/gens directory
+# so I had asked Grok for help and he told me to use the following command to rename the object files ('__') , So Sad
+add_custom_command(TARGET output POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E rename
     ${CMAKE_BINARY_DIR}/CMakeFiles/output.dir/app.c.o
     ${CMAKE_SOURCE_DIR}/out/gens/app.o
 )
