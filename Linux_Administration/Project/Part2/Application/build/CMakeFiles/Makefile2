@@ -113,8 +113,8 @@ xor_cipher_build/clean: xor_cipher_build/CMakeFiles/xor_cipher.dir/clean
 # Target rules for target CMakeFiles/output.dir
 
 # All Build rule for target.
-CMakeFiles/output.dir/all: caesar_cipher_build/CMakeFiles/caesar_cipher.dir/all
 CMakeFiles/output.dir/all: xor_cipher_build/CMakeFiles/xor_cipher.dir/all
+CMakeFiles/output.dir/all: caesar_cipher_build/CMakeFiles/caesar_cipher.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part2/Application/build/CMakeFiles --progress-num=4,5 "Built target output"

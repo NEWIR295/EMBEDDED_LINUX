@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Application/out/lib/libxor_cipher.pdb"
-  "/home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Application/out/lib/libxor_cipher.so"
+  "/home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part2/Application/out/lib/libxor_cipher.pdb"
+  "/home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part2/Application/out/lib/libxor_cipher.so"
   "CMakeFiles/xor_cipher.dir/src/xor_decrypt.c.o"
   "CMakeFiles/xor_cipher.dir/src/xor_decrypt.c.o.d"
   "CMakeFiles/xor_cipher.dir/src/xor_encrypt.c.o"

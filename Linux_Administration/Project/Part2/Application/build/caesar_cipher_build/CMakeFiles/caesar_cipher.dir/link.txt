@@ -1,2 +1,2 @@
-/usr/bin/ar qc /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Application/out/lib/libcaesar_cipher.a CMakeFiles/caesar_cipher.dir/src/caesar_encrypt.c.o CMakeFiles/caesar_cipher.dir/src/caesar_decrypt.c.o
-/usr/bin/ranlib /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Application/out/lib/libcaesar_cipher.a
+/usr/bin/ar qc /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part2/Application/out/lib/libcaesar_cipher.a CMakeFiles/caesar_cipher.dir/src/caesar_encrypt.c.o CMakeFiles/caesar_cipher.dir/src/caesar_decrypt.c.o
+/usr/bin/ranlib /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part2/Application/out/lib/libcaesar_cipher.a
