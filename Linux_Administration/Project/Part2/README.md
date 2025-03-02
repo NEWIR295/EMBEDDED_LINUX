@@ -67,7 +67,7 @@ This will:
 - Configure the build system.
 - Compile the static and dynamic libraries.
 - Compile the `app.c` source file.
-- Link everything into an executable named `output` located in `Application/build`.
+- Link everything into an executable named `output` located in `Application/`.
 
 ![CMake building and executing the program ](ScreenShots/CMake.png)
 
