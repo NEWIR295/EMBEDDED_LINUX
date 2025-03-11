@@ -17,19 +17,25 @@
 #			make -f xor_cipher.mk --> used to build the dynamic library.
 #			make -f xor_cipher.mk clean --> used to remove the object files and the dynamic library.	
 
-XOR_CIPHER_INCLUDES_DIR = /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part2/Modules/xor_cipher/inc
-XOR_CIPHER_SOURCE_DIR = /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part2/Modules/xor_cipher/src
+# current directory paths
+XOR_CIPHER_INCLUDES_DIR = $(shell pwd)/../Modules/xor_cipher/inc
+XOR_CIPHER_SOURCE_DIR = $(shell pwd)/../Modules/xor_cipher/src
 
-LIB_DIR = /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part2/Application/out/lib
-OBJ_DIR = /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part2/Application/out/gens
-OUT_DIR = /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part2/Application/out
+# exported directory paths
+LIB_DIR = $(shell pwd)/../Application/out/lib
+OBJ_DIR = $(shell pwd)/../Application/out/gens
+OUT_DIR = $(shell pwd)/../Application/out
 
+# used compiler
 CC = gcc
+# used Flags
 CFLAGS = -I$(XOR_CIPHER_INCLUDES_DIR) -fPIC -Wall -Werror
 DYNAMIC_LIB_FLAGS = -shared
 
+# xor file object targets
 XOBJ = $(OBJ_DIR)/xor_decrypt.o $(OBJ_DIR)/xor_encrypt.o
 
+# Dynamic library
 DYNAMIC_LIB = $(LIB_DIR)/libxor_cipher.so
 
 xor_all: $(LIB_DIR)/libxor_cipher.so

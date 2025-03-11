@@ -11,25 +11,30 @@
 #			make --> used to build the application.
 #			make clean --> used to remove the object files and the application.
 
-
+# current directory paths
 LIB_DIR_ = ./out/lib
 OBJ_DIR_ = ./out/gens
 OUT_DIR_ = out
 APP_DIR_ = .
 
-XOR_CIPHER_INCLUDES_DIR_ = /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part2/Modules/xor_cipher/inc
-CAESAR_CIPHER_INCLUDES_DIR_ = /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part2/Modules/caesar_cipher/inc
+# exported directory paths
+XOR_CIPHER_INCLUDES_DIR_ = $(shell pwd)/../Modules/xor_cipher/inc
+CAESAR_CIPHER_INCLUDES_DIR_ = $(shell pwd)/../Modules/caesar_cipher/inc
 CFLAGS_ = -I$(XOR_CIPHER_INCLUDES_DIR_) -I$(CAESAR_CIPHER_INCLUDES_DIR_) -Wall -Werror
 
+# used compiler
 CC = gcc
 
+# used libraries
 DYNAMIC_LIB_ = $(LIB_DIR_)/libxor_cipher.so 
 STATIC_LIB_ = $(LIB_DIR_)/libcaesar_cipher.a
 
+# application obj file
 OBJ_ = app.o
 
-include /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part2/Modules/xor_cipher/xor_cipher.mk
-include /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part2/Modules/caesar_cipher/caesar_cipher.mk
+# Include sub Makefile
+include $(shell pwd)/../Modules/xor_cipher/xor_cipher.mk
+include $(shell pwd)/../Modules/caesar_cipher/caesar_cipher.mk
 
 
 all:  xor_all caesar_all  $(OBJ_DIR_)/$(OBJ_)
@@ -39,7 +44,7 @@ all:  xor_all caesar_all  $(OBJ_DIR_)/$(OBJ_)
 	$(CC)  $(OBJ_DIR_)/app.o -L$(LIB_DIR_) -lcaesar_cipher -lxor_cipher -o $(APP_DIR_)/output
 	@echo "							Run the following before executing the application:"
 	@echo 'export LD_LIBRARY_PATH=$(LIB_DIR_)'
-	@echo "Then execute: ./output"
+	@echo "Then execute for example: ./output 3 K “aaa”"
 
 $(OBJ_DIR_)/app.o: $(APP_DIR_)/app.c
 	@if [ ! -d $(OBJ_DIR_) ]; then mkdir -p $(OBJ_DIR_); fi

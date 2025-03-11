@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/Output.dir/Source/main.c.o -o Output 

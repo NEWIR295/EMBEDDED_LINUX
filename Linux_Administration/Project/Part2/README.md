@@ -1,8 +1,8 @@
 # Linux Administration Project - Part 2
 ## Author: [Mohamed Newir](https://www.linkedin.com/in/mohamed-newir-a8a572182)
 
-## Project Overview  
-This project is part of Linux administration course that involves building an application using Makefiles and CMake. The project consists of:  
+## Project Part 2 Overview  
+This project is part of **Linux administration** course project that involves building an application using Makefiles and CMake. The project consists of:  
 - A main application that utilizes encryption and decryption modules.  
 - Two cryptographic modules: **Caesar Cipher** (static library) and **XOR Cipher** (dynamic library).  
 - Object files, libraries, and the final application executable are organized under the `Application/out` directory.  
@@ -13,6 +13,7 @@ Project/Part2
 ├── Application
 │   ├── app.c
 │   ├── Makefile
+│   │   ├── CMakeLists.txt
 │   ├── out
 │   │   ├── gens  (Object files)
 │   │   │   ├── app.o
@@ -27,6 +28,7 @@ Project/Part2
 ├── Modules
 │   ├── caesar_cipher
 │   │   ├── caesar_cipher.mk
+│   │   ├── CMakeLists.txt
 │   │   ├── inc
 │   │   │   ├── caesar_cipher.h
 │   │   ├── src
@@ -34,6 +36,7 @@ Project/Part2
 │   │   │   ├── caesar_encrypt.c
 │   ├── xor_cipher
 │   │   ├── xor_cipher.mk
+│   │   ├── CMakeLists.txt
 │   │   ├── inc
 │   │   │   ├── xor_cipher.h
 │   │   ├── src

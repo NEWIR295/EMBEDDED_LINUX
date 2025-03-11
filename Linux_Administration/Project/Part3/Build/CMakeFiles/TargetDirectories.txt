@@ -1,0 +1,3 @@
+/home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part3/Build/CMakeFiles/Output.dir
+/home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part3/Build/CMakeFiles/edit_cache.dir
+/home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part3/Build/CMakeFiles/rebuild_cache.dir

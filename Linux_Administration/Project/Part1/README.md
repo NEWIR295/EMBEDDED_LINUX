@@ -1,6 +1,5 @@
 # Linux Administration Project - Part 1
-
-### By Mohamed Newir
+## Author: [Mohamed Newir](https://www.linkedin.com/in/mohamed-newir-a8a572182)
 
 ## Overview
 This part contains two Bash scripts:
@@ -14,13 +13,13 @@ This part contains two Bash scripts:
 
 #### **Usage:**
 ```sh
-./userdef.sh <username> <password> <groupname> <clean>
+sudo ./userdef.sh <username> <password> <groupname> <clean>
 ```
 
 #### **Examples:**
 ```sh
-./userdef.sh mohamed password123 group1 1  # Cleanup user and group
-./userdef.sh mohamed password123 group1 0  # Create user and group, update UID and GID
+sudo ./userdef.sh mohamed password123 group1 1  # Cleanup user and group
+sudo ./userdef.sh mohamed password123 group1 0  # Create user and group, update UID and GID
 ```
 
 ---
@@ -110,10 +109,5 @@ This part contains two Bash scripts:
    rm *.c
    ```
    ![Delete all c files inside the directory](ScreenShots/question2_DeleteC.png)
-
+   
 ---
-
-## Author
-
-- **Mohamed Newir**  
-  [LinkedIn Profile](https://www.linkedin.com/in/mohamed-newir-a8a572182)

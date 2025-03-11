@@ -13,20 +13,28 @@
 #			make -f caesar_cipher.mk --> used to build the static library.
 #			make -f caesar_cipher.mk clean --> used to remove the object files and the static library.		
 
-CAESAR_CIPHER_INCLUDES_DIR = /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part2/Modules/caesar_cipher/inc
-CAESAR_CIPHER_SOURCE_DIR = /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part2/Modules/caesar_cipher/src
+# current directory paths
+CAESAR_CIPHER_INCLUDES_DIR = $(shell pwd)/../Modules/caesar_cipher/inc
+CAESAR_CIPHER_SOURCE_DIR = $(shell pwd)/../Modules/caesar_cipher/src
 
-LIB_DIR = /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part2/Application/out/lib
-OBJ_DIR = /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part2/Application/out/gens
-OUT_DIR = /home/newir529/EMBEDDED_LINUX/Linux_Administration/Project/Part2/Application/out
+# exported directory paths
+LIB_DIR = $(shell pwd)/../Application/out/lib
+OBJ_DIR = $(shell pwd)/../Application/out/gens
+OUT_DIR = $(shell pwd)/../Application/out
 
+# used compiler
 CC = gcc
+
+# static library maker command
 AR = ar 
+# use flags
 CFLAGS = -I$(CAESAR_CIPHER_INCLUDES_DIR) -Wall -Werror
 STATIC_LIB_FLAGS = rcs 
 
+# caesar file object targets
 COBJ = $(OBJ_DIR)/caesar_decrypt.o $(OBJ_DIR)/caesar_encrypt.o
 
+# Static library 
 STATIC_LIB = libcaesar_cipher.a 
 
 caesar_all: $(LIB_DIR)/libcaesar_cipher.a
