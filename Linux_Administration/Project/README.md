@@ -43,6 +43,6 @@ The final part involves **process management** using C:
 Linux_Admin_Course_Project/
 │-- Part1/  (Bash Scripting)
 │-- Part2/  (Application Development)
-│-- Part3/  (Process Management)
+│-- Part3/  (Process Management and Networking)
 │-- README.md  (Project Documentation)
 ```
