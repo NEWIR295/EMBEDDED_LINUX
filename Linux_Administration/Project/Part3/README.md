@@ -25,30 +25,25 @@ Linux_Administration/Project/Part3/
 
 
 ## Compilation and Execution
-### Step 1: Compile the Project on the Host Machine
-```sh
-cd Linux_Administration/Project/Part3/Build
-cmake ..
-make
-```
-This generates the executable inside the `Build/Output` directory.
 
-### Step 2: Transfer to Raspberry Pi 5
+### Step 1: Transfer to Raspberry Pi 5
 Use `scp` to transfer the compiled output:
 ```sh
 scp -P 22 -r Project <Raspberry_User_Name>@<RaspberryPi_IP>:/home/<pi_user>/
 ```
 Replace `<RaspberryPi_IP>` with the actual IP address of your Raspberry Pi 5 and `<Raspberry_User_Name>` with the actual raspberry pi user name.
 
-### Step 3: SSH into Raspberry Pi 5
+### Step 2 : SSH into Raspberry Pi 5
 Log in remotely using SSH:
 ```sh
 ssh -p 22 <Raspberry_User_Name>@<RaspberryPi_IP>
 ```
 
-### Step 4: Navigate and Execute the Program
+### Step 3: Navigate and Compile the Program then Execute it
 ```sh
 cd /home/pi/Project/Part3/Build/
+cmake ..
+make 
 ./Output
 ```
 This will execute the `ps` and `mpstat` commands using **fork** and **execv** ant it will show both process status and CPU usage statistics.
