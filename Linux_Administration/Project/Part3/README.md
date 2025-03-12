@@ -36,14 +36,14 @@ This generates the executable inside the `Build/Output` directory.
 ### Step 2: Transfer to Raspberry Pi 5
 Use `scp` to transfer the compiled output:
 ```sh
-scp -r Project <Raspberry_User_Name>@<RaspberryPi_IP>:/home/<pi_user>/
+scp -P 22 -r Project <Raspberry_User_Name>@<RaspberryPi_IP>:/home/<pi_user>/
 ```
 Replace `<RaspberryPi_IP>` with the actual IP address of your Raspberry Pi 5 and `<Raspberry_User_Name>` with the actual raspberry pi user name.
 
 ### Step 3: SSH into Raspberry Pi 5
 Log in remotely using SSH:
 ```sh
-ssh <Raspberry_User_Name>@<RaspberryPi_IP>
+ssh -p 22 <Raspberry_User_Name>@<RaspberryPi_IP>
 ```
 
 ### Step 4: Navigate and Execute the Program
@@ -53,6 +53,6 @@ cd /home/pi/Project/Part3/Build/
 ```
 This will execute the `ps` and `mpstat` commands using **fork** and **execv** ant it will show both process status and CPU usage statistics.
 
-![ Testing Part 3 in Linux Administration Project ](Video/Part3.mp4)
+![ Testing Part 3 in Linux Administration Project ](Video/Project_Part3.webm)
 ---
 
