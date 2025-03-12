@@ -51,3 +51,35 @@ This will execute the `ps` and `mpstat` commands using **fork** and **execv** an
 ![ Testing Part 3 in Linux Administration Project ](Video/demo.gif)
 ---
 
+## Static IP Configuration
+
+- To apply static IP In ubuntu machine using netplan configuration, first you should add the following to your router `yaml` file at `/etc/netplan/[your netplan file].yaml`:
+
+```sh
+network:
+  version: 2
+  wifis:
+    [your netplan file name]:
+      renderer: NetworkManager
+      match:
+        name: "wlan0"
+      dhcp4: no
+      dhcp6: true
+      addresses:
+        - ***.***.***.100/24 # your device static IP
+      routes:
+        - to: 0.0.0.0/0
+          via: ***.***.***.1 # your router IP
+      nameservers:
+        addresses:
+          - 8.8.8.8 # DNS server for Google
+```
+
+- Second run the following commands in the terminal:
+```sh
+$ sudo netplan generate
+$ sudo netplan apply
+$ sudo systemctl restart NetworkManager
+```
+
+---
