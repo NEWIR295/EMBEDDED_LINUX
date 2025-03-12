@@ -36,7 +36,7 @@ The final part involves **process management** using C:
   - `ps` (Process Status)
   - `mpstat` (CPU Usage Statistics)
 - The project is **transferred to a Raspberry Pi 5** using `scp`.
-- It is then compiled and executed on the Raspberry Pi via `ssh`.
+- Then compiled and executed on the Raspberry Pi via `ssh`.
 
 ## Project Structure
 ```
