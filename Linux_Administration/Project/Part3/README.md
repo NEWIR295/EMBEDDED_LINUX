@@ -36,7 +36,7 @@ This generates the executable inside the `Build/Output` directory.
 ### Step 2: Transfer to Raspberry Pi 5
 Use `scp` to transfer the compiled output:
 ```sh
-scp -r Project <Raspberry_User_Name>@<RaspberryPi_IP>:/home/pi/
+scp -r Project <Raspberry_User_Name>@<RaspberryPi_IP>:/home/<pi_user>/
 ```
 Replace `<RaspberryPi_IP>` with the actual IP address of your Raspberry Pi 5 and `<Raspberry_User_Name>` with the actual raspberry pi user name.
 
