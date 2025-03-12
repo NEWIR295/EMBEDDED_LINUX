@@ -35,9 +35,8 @@ The final part involves **process management** using C:
 - Uses **fork()** and **execv()** to execute **system monitoring commands**:
   - `ps` (Process Status)
   - `mpstat` (CPU Usage Statistics)
-- The project is **compiled on a host machine**.
-- The compiled project is **transferred to a Raspberry Pi 5** using `scp`.
-- It is then executed on the Raspberry Pi via `ssh`.
+- The project is **transferred to a Raspberry Pi 5** using `scp`.
+- It is then compiled and executed on the Raspberry Pi via `ssh`.
 
 ## Project Structure
 ```
