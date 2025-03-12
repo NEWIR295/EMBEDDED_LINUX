@@ -19,15 +19,14 @@ Linux_Administration/Project/Part3/
 - Uses **fork()** and **execv()** system calls to execute:
   - `ps` command (process status)
   - `mpstat` command (CPU usage statistics)
-- Compilation on a **host machine**.
-- Transfer of the compiled project to **Raspberry Pi 5**.
-- Execution on **Raspberry Pi 5** using SSH.
+- Transfer `Part3` directory to **Raspberry Pi 5**.
+- Compilation and execution of `Part3` on **Raspberry Pi 5** using SSH.
 
 
 ## Compilation and Execution
 
 ### Step 1: Transfer to Raspberry Pi 5
-Use `scp` to transfer the compiled output:
+Use `scp` to transfer `Part3` directory:
 ```sh
 scp -P 22 -r Project <Raspberry_User_Name>@<RaspberryPi_IP>:/home/<pi_user>/
 ```
