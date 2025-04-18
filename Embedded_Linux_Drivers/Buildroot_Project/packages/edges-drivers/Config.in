@@ -1,0 +1,4 @@
+config BR2_PACKAGE_EDGES_DRIVERS
+    bool "Edges Custom Drivers"
+    help
+      Custom LED and Switch drivers for the Edges project.

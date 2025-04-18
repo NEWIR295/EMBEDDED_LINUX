@@ -1,0 +1,4 @@
+config BR2_PACKAGE_DEMO_APP
+    bool "Demo Application"
+    help
+      Application to control LED with switch.
