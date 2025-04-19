@@ -138,19 +138,19 @@ make
 ## Create and Test SD card image
 
    ```bash
-   dd if=/dev/zero of=output/images/sdcard.img bs=1M count=512
-   fdisk output/images/sdcard.img
+   dd if=/dev/zero of=output/images/sdcard.img bs=1M count=512 #Creates a blank SD card image file.
+   fdisk output/images/sdcard.img #Opens the SD card image in fdisk to create partitions.
    # Follow fdisk instructions to create partitions
-   fdisk -l output/images/sdcard.img
-   sudo losetup -f --show -o 1048576 --sizelimit 67108864 output/images/sdcard.img
-   sudo losetup -f --show -o 68157440 output/images/sdcard.img
-   sudo mkfs.vfat -F 32 /dev/loop38
-   sudo mkfs.ext2 /dev/loop39
+   fdisk -l output/images/sdcard.img #Show created partions 
+   sudo losetup -f --show -o 1048576 --sizelimit 67108864 output/images/sdcard.img #Sets up a loop device for the first partition.
+   sudo losetup -f --show -o 68157440 output/images/sdcard.img #Sets up a loop device for the second partition.
+   sudo mkfs.vfat -F 32 /dev/loop38 #Formats the first partition as FAT32.
+   sudo mkfs.ext2 /dev/loop39 #Formats the second partition as ext2.
    mkdir -p mnt/boot mnt/rootfs
    sudo mount /dev/loop38 mnt/boot
-   sudo cp output/images/zImage output/images/vexpress-v2p-ca9.dtb mnt/boot/ 
+   sudo cp output/images/zImage output/images/vexpress-v2p-ca9.dtb mnt/boot/ #Copies boot files to the boot partition.
    sudo mount /dev/loop39 mnt/rootfs
-   sudo tar -xpf output/images/rootfs.tar -C mnt/rootfs
+   sudo tar -xpf output/images/rootfs.tar -C mnt/rootfs #Extracts the root filesystem into the second partition.
    cat mnt/rootfs/etc/network/interfaces #check static ip configurations 
    sudo umount mnt/boot mnt/rootfs #After complete checking unmount boot & rootfs
    sudo losetup -d /dev/loop38 /dev/loop39
