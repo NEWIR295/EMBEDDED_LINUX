@@ -135,7 +135,7 @@ make demo-app-dirclean
 make
 ```
 
-## Create an SD card image
+## Create and Test SD card image
 
    ```bash
    dd if=/dev/zero of=output/images/sdcard.img bs=1M count=512
