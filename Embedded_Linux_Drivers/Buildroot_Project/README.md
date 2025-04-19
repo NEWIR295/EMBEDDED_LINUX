@@ -155,7 +155,7 @@ make
    sudo umount mnt/boot mnt/rootfs #After complete checking unmount boot & rootfs
    sudo losetup -d /dev/loop38 /dev/loop39
    ```
-   - Note to change loop38 and loop39 with your actual loops 
+   - Replace loop38 and loop39 with your actual loops 
 
 ## Testing the Image
 
