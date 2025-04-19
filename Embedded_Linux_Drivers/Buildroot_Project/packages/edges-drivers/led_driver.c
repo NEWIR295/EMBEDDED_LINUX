@@ -3,7 +3,7 @@ Author: Mohamed Newir
 Date: 13/02/2025
 File: led_driver.c
 Description:   
-            This is a simple Linux kernel module that implements a character device driver for an LED.
+            This is a simple Linux kernel module that implements a character device driver for a LED.
             The driver allows user-space applications to control the LED state (on/off) through
             read and write operations on the device file.
             The driver uses the Linux kernel's character device API to create a device file

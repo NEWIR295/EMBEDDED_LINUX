@@ -3,7 +3,7 @@ Author: Mohamed Newir
 Date: 15/02/2025
 File: demo_app.c
 Description:    
-            This is a simple demo application that interacts with a switch and an LED device.
+            This is a simple demo application that interacts with a switch and a LED device.
             It allows the user to turn the LED on or off by setting the switch state.
             The application opens the device files for the switch and LED, and then enters a loop
             where it prompts the user to enter the switch state (0 or 1). Based on the input,
