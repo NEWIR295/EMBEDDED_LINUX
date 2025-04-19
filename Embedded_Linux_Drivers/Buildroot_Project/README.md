@@ -148,11 +148,11 @@ make
    sudo mkfs.ext2 /dev/loop39
    mkdir -p mnt/boot mnt/rootfs
    sudo mount /dev/loop38 mnt/boot
-   sudo cp output/images/zImage output/images/vexpress-v2p-ca9.dtb mnt/boot/
+   sudo cp output/images/zImage output/images/vexpress-v2p-ca9.dtb mnt/boot/ 
    sudo mount /dev/loop39 mnt/rootfs
    sudo tar -xpf output/images/rootfs.tar -C mnt/rootfs
    cat mnt/rootfs/etc/network/interfaces #check static ip configurations 
-   sudo umount mnt/boot mnt/rootfs 
+   sudo umount mnt/boot mnt/rootfs #After complete checking unmount boot & rootfs
    sudo losetup -d /dev/loop38 /dev/loop39
    ```
    - Note to change loop38 and loop39 with your actual loops 
