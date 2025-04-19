@@ -50,7 +50,6 @@ Before beginning, ensure the following are available:
      - Choose **GCC compiler version 12.x.x**
    - **Filesystem Images:**
      - Enable **initial RAM filesystem linked into Linux kernel**
-     - **Initramfs source:** `board/mytarget/initramfs-init`
      - Enable **ext2/3/4 root filesystem**, select **ext4**, set size to **512M**
    - **Target Packages:**
      - Under **Networking**, enable **dhcpcd** for Ethernet support
@@ -175,6 +174,10 @@ make
    ```bash
    echo "UART Test Successful" > /dev/ttyAMA0
    ```
+   or
+   ```bash 
+   cat /dev/ttyAMA0
+   ```
 
 4. **Test networking:**
 
@@ -219,20 +222,16 @@ Linux_Embedded_Drivers_Course_Project/
 │       └── users.txt
 |
 ├── output/
-│   ├── build/
-│   ├── host/
-│   ├── images/
-│   │   ├── rootfs.cpio
-│   │   ├── rootfs.ext2
-│   │   ├── rootfs.ext4
-│   │   ├── rootfs.tar
-│   │   ├── sdcard.img
-│   │   ├── start-qemu.sh
-│   │   ├── u-boot.bin
-│   │   ├── vexpress-v2p-ca9.dtb
-│   │   └── zImage
-│   ├── staging/
-│   └── target/
+│   └── images/
+│       ├── rootfs.cpio
+│       ├── rootfs.ext2
+│       ├── rootfs.ext4
+│       ├── rootfs.tar
+│       ├── sdcard.img
+│       ├── start-qemu.sh
+│       ├── u-boot.bin
+│       ├── vexpress-v2p-ca9.dtb
+│       └── zImage
 |
 ├── packages/
 │   ├── demo-app/
@@ -256,4 +255,4 @@ Linux_Embedded_Drivers_Course_Project/
 
 ## Honest Opinion
 
-This project demands considerable patience, particularly during compilation and error debugging. It often involves sniffing through numerous obscure websites, risking exposure to outdated information or even malware 😢. Without AI assistance like Grok, navigating the vast open-source community can feel like being lost at sea 🌊. If your working environment differs from the one specified, the image may not build correctly. For those considering a similar endeavor, I recommend exploring Yocto over Buildroot for its greater flexibility and support 😊👍.
+This project demands considerable patience, particularly during compilation and error debugging. It often involves sniffing through numerous obscure websites, risking exposure to outdated information or even malware 😢. Without AI assistance like **Grok**, navigating the vast open-source community can feel like being lost at sea 🌊. If your working environment differs from the one specified, the image may not build correctly. For those considering a similar endeavor, I recommend exploring **Yocto** over **Buildroot** for its greater flexibility and support 😊👍.
