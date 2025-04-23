@@ -1,0 +1,11 @@
+#!/bin/sh
+mount -t proc proc /proc
+mount -t sysfs sys /sys
+mount -t devtmpfs dev /dev
+# Wait for SD card
+while [ ! -e /dev/mmcblk0p2 ]; do
+  sleep 1
+done
+mkdir /newroot
+mount /dev/mmcblk0p2 /newroot
+exec switch_root /newroot /sbin/init
