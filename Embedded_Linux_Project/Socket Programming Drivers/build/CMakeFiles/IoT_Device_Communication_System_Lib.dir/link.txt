@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/newir529/yocto/yocto/EMBEDDED_LINUX/Embedded_Linux_Project/GUI/Server_Gui/Lib/libIoT_Device_Communication_System_Lib.a CMakeFiles/IoT_Device_Communication_System_Lib.dir/Source/TCPsocket.cpp.o CMakeFiles/IoT_Device_Communication_System_Lib.dir/Source/serverChannel.cpp.o CMakeFiles/IoT_Device_Communication_System_Lib.dir/Source/clientChannel.cpp.o
+/usr/bin/ranlib /home/newir529/yocto/yocto/EMBEDDED_LINUX/Embedded_Linux_Project/GUI/Server_Gui/Lib/libIoT_Device_Communication_System_Lib.a

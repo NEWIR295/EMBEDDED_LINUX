@@ -1,0 +1,5 @@
+/home/newir529/yocto/yocto/EMBEDDED_LINUX/Embedded_Linux_Project/Socket Programming Drivers/build/CMakeFiles/server.dir
+/home/newir529/yocto/yocto/EMBEDDED_LINUX/Embedded_Linux_Project/Socket Programming Drivers/build/CMakeFiles/client.dir
+/home/newir529/yocto/yocto/EMBEDDED_LINUX/Embedded_Linux_Project/Socket Programming Drivers/build/CMakeFiles/IoT_Device_Communication_System_Lib.dir
+/home/newir529/yocto/yocto/EMBEDDED_LINUX/Embedded_Linux_Project/Socket Programming Drivers/build/CMakeFiles/edit_cache.dir
+/home/newir529/yocto/yocto/EMBEDDED_LINUX/Embedded_Linux_Project/Socket Programming Drivers/build/CMakeFiles/rebuild_cache.dir

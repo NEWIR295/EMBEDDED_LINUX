@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/client.dir/Source/client.cpp.o CMakeFiles/client.dir/Source/TCPsocket.cpp.o CMakeFiles/client.dir/Source/serverChannel.cpp.o CMakeFiles/client.dir/Source/clientChannel.cpp.o -o client 
