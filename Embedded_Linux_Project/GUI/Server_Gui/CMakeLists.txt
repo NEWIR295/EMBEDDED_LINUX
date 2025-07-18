@@ -27,12 +27,13 @@ qt_add_executable(Server_Gui
     main.cpp
     mainwindow.cpp
     mainwindow.h
-    #mainwindow.ui
+    mainwindow.ui
     Include/channel.hpp Include/clientChannel.hpp Include/serverChannel.hpp Include/socket.hpp Include/TCPsocket.hpp Include/UDPsocket.hpp
     resources.qrc
     server.hpp
     server.cpp
     ${QML_FILES}
+    mainwindow.ui
 )
 
 target_link_libraries(Server_Gui

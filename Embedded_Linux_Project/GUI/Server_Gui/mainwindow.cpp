@@ -29,47 +29,109 @@ MainWindow::MainWindow(const std::string& ip, int port, QWidget* parent)
     : QMainWindow(parent), currentThreshold(30.0) {
     QTabWidget* tabWidget = new QTabWidget;
 
+
     // Tab 1: Real Time Monitor
     QQuickWidget* meterWidget = new QQuickWidget;
-    meterWidget->setSource(QUrl("qrc:///qml/meter.qml"));
     meterWidget->rootContext()->setContextProperty("currentTemperature", 0.0);
+    meterWidget->setSource(QUrl("qrc:/qml/Resources/qml/meter.qml"));
+    meterWidget->setResizeMode(QQuickWidget::SizeRootObjectToView); // Make QML resize with widget
+    //Set minimum size for better visibility
+    meterWidget->setMinimumSize(400, 300);
     tabWidget->addTab(meterWidget, "Real Time Monitor");
 
     // Tab 2: Historical Analysis
     temperatureModel = new TemperatureModel(this);
     QQuickWidget* chartWidget = new QQuickWidget;
-    chartWidget->setSource(QUrl("qrc:///qml/chart.qml"));
     chartWidget->rootContext()->setContextProperty("temperatureModel", temperatureModel);
+    chartWidget->setSource(QUrl("qrc:/qml/Resources/qml/chart.qml"));
     tabWidget->addTab(chartWidget, "Historical Analysis");
 
     // Tab 3: Configuration
     QWidget* configTab = new QWidget;
     QVBoxLayout* configLayout = new QVBoxLayout(configTab);
+
+    // Label
+    QLabel* thresholdLabel = new QLabel("Set Threshold (°C):");
+    thresholdLabel->setAlignment(Qt::AlignCenter);
+    configLayout->addWidget(thresholdLabel);
+
+    // Centered spin box using horizontal layout
+    QHBoxLayout* centerLayout = new QHBoxLayout;
     QDoubleSpinBox* thresholdSpinBox = new QDoubleSpinBox;
     thresholdSpinBox->setRange(0.0, 100.0);
+    thresholdSpinBox->setDecimals(0);
     thresholdSpinBox->setValue(currentThreshold);
-    configLayout->addWidget(new QLabel("Set Threshold (°C):"));
-    configLayout->addWidget(thresholdSpinBox);
-    configLayout->addStretch();
+    thresholdSpinBox->setFixedWidth(150);
+    thresholdSpinBox->setFixedHeight(60);
+
+    thresholdSpinBox->setFont(QFont("Arial", 20, QFont::Bold));
+    centerLayout->addStretch();
+    centerLayout->addWidget(thresholdSpinBox);
+    centerLayout->addStretch();
+    configLayout->addLayout(centerLayout);
+
+    // Stretch to push everything to vertical center
+    configLayout->addStretch(1);
+    configLayout->insertStretch(0, 1);  // Stretch on top
+
+    // Background image
+    configTab->setStyleSheet(R"(
+    QWidget {
+        background-image: url(:/icons/Resources/icons/background.jpg);
+        background-repeat: no-repeat;
+    })");
+
     tabWidget->addTab(configTab, "Configuration");
 
     // Tab 4: Quick Access
     QWidget* quickAccessTab = new QWidget;
     QHBoxLayout* quickAccessLayout = new QHBoxLayout(quickAccessTab);
-    QPushButton* fbButton = new QPushButton("Facebook");
-    fbButton->setIcon(QIcon(":/icons/facebook.png"));
-    connect(fbButton, &QPushButton::clicked, [](){ QDesktopServices::openUrl(QUrl("https://www.facebook.com/share/19hfjncKaN/")); });
-    quickAccessLayout->addWidget(fbButton);
-    QPushButton* linkedinButton = new QPushButton("LinkedIn");
-    linkedinButton->setIcon(QIcon(":/icons/linkedin.png"));
-    connect(linkedinButton, &QPushButton::clicked, [](){ QDesktopServices::openUrl(QUrl("https://www.linkedin.com/company/edges-for-training/")); });
-    quickAccessLayout->addWidget(linkedinButton);
-    QPushButton* instagramButton = new QPushButton("Instagram");
-    instagramButton->setIcon(QIcon(":/icons/instagram.png"));
-    connect(instagramButton, &QPushButton::clicked, [](){ QDesktopServices::openUrl(QUrl("https://www.instagram.com/edgesfortraining")); });
-    quickAccessLayout->addWidget(instagramButton);
+
+    // Add stretch to the left
     quickAccessLayout->addStretch();
+
+    QPushButton* fbButton = new QPushButton("Facebook");
+    fbButton->setFont(QFont("Arial", 15, QFont::Bold));
+    fbButton->setIcon(QIcon(":/icons/Resources/icons/facebook.png"));
+    connect(fbButton, &QPushButton::clicked, [](){
+        QDesktopServices::openUrl(QUrl("https://www.facebook.com/share/19hfjncKaN/"));
+    });
+    quickAccessLayout->addWidget(fbButton);
+
+    QPushButton* linkedinButton = new QPushButton("LinkedIn");
+    linkedinButton->setFont(QFont("Arial", 15, QFont::Bold));
+    linkedinButton->setIcon(QIcon(":/icons/Resources/icons/linkedin.png"));
+    connect(linkedinButton, &QPushButton::clicked, [](){
+        QDesktopServices::openUrl(QUrl("https://www.linkedin.com/company/edges-for-training/"));
+    });
+    quickAccessLayout->addWidget(linkedinButton);
+
+    QPushButton* instagramButton = new QPushButton("Instagram");
+    instagramButton->setFont(QFont("Arial", 15, QFont::Bold));
+    instagramButton->setIcon(QIcon(":/icons/Resources/icons/instagram.png"));
+    connect(instagramButton, &QPushButton::clicked, [](){
+        QDesktopServices::openUrl(QUrl("https://www.instagram.com/edgesfortraining"));
+    });
+    quickAccessLayout->addWidget(instagramButton);
+
+    // Add stretch to the right
+    quickAccessLayout->addStretch();
+
+    quickAccessTab->setLayout(quickAccessLayout);
+
+    // Set background
+    quickAccessTab->setStyleSheet(R"(
+    QWidget {
+        background-image: url(:/icons/Resources/icons/background.jpg);
+        background-repeat: no-repeat;
+    }
+    )");
+
     tabWidget->addTab(quickAccessTab, "Quick Access");
+
+
+
+    //tabWidget -> setStyleSheet("background-image: url(:/icons/Resources/icons/background.jpg);");
 
     setCentralWidget(tabWidget);
 
@@ -94,7 +156,7 @@ MainWindow::MainWindow(const std::string& ip, int port, QWidget* parent)
     workerThread->start();
 
     // Optional background
-    setStyleSheet("QMainWindow { background-image: url(:/icons/background.jpg); }");
+    //setStyleSheet("QMainWindow { background-image: url(:/icons/Resources/icons/background.jpg); }");
 }
 
 MainWindow::~MainWindow() {

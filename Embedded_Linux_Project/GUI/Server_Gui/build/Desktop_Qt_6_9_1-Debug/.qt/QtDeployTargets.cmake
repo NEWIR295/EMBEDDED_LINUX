@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_Server_Gui_FILE /home/newir529/Server_Gui/build/Desktop_Qt_6_9_1-Debug/Server_Gui)
+set(__QT_DEPLOY_TARGET_Server_Gui_TYPE EXECUTABLE)

@@ -1,0 +1,9 @@
+-rootPath
+/home/newir529/Server_Gui
+-cmake-output
+-output-file
+/home/newir529/Server_Gui/build/Desktop_Qt_6_9_1-Debug/.qt/qml_imports/Server_Gui_conf.cmake
+-importPath
+/home/newir529/Server_Gui/build/Desktop_Qt_6_9_1-Debug
+-importPath
+/home/newir529/Qt/6.9.1/gcc_64/qml
