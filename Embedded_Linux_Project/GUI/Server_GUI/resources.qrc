@@ -1,9 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file alias="background.jpg">resources/Background.jpg</file>
-        <file alias="facebook.png">resources/facebook-app-symbol.png</file>
-        <file alias="instagram.png">resources/instagram.png</file>
-        <file alias="linkedin.png">resources/linkedin.png</file>
-        <file alias="chart.qml">chart.qml</file>
-    </qresource>
-</RCC>
