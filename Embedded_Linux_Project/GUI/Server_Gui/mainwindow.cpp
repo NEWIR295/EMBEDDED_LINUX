@@ -37,6 +37,7 @@ MainWindow::MainWindow(const std::string& ip, int port, QWidget* parent)
     meterWidget->setResizeMode(QQuickWidget::SizeRootObjectToView); // Make QML resize with widget
     //Set minimum size for better visibility
     meterWidget->setMinimumSize(400, 300);
+
     tabWidget->addTab(meterWidget, "Real Time Monitor");
 
     // Tab 2: Historical Analysis
@@ -170,6 +171,7 @@ void MainWindow::onTemperatureReceived(double temperature) {
     QQuickWidget* meterWidget = qobject_cast<QQuickWidget*>(centralWidget()->findChild<QQuickWidget*>());
     if (meterWidget) {
         meterWidget->rootContext()->setContextProperty("currentTemperature", temperature);
+        meterWidget->update();
     }
     temperatureModel->addTemperature(temperature);
     ledLabel->setText(temperature > currentThreshold ? "LED: ON" : "LED: OFF");
