@@ -255,10 +255,13 @@ The Server GUI includes four tabs:
 
 - **Real Time Monitor**: QML meter for real-time temperature.
   ![Real Time Monitor](./GUI/Tabs/RealTimeMonitorTab.png)
+  
 - **Historical Analysis**: QML chart for temperature history.
   ![Historical Analysis](./GUI/Tabs/HistoricalAnalysisTab.png)
+
 - **Configuration**: Spin box for setting thresholds.
   ![Configuration](./GUI/Tabs/Config.png)
+
 - **Quick Access**: Social media links for Edges For Training.
   ![Quick Access](./GUI/Tabs/EdgesQuickAcess.png)
 
