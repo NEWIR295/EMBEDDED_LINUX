@@ -254,15 +254,19 @@ The project is organized into three main components: `Socket Programming Drivers
 The Server GUI includes four tabs:
 
 - **Real Time Monitor**: QML meter for real-time temperature.
+
   ![Real Time Monitor](./GUI/Tabs/RealTimeMonitorTab.png)
-  
+
 - **Historical Analysis**: QML chart for temperature history.
+
   ![Historical Analysis](./GUI/Tabs/HistoricalAnalysisTab.png)
 
 - **Configuration**: Spin box for setting thresholds.
+
   ![Configuration](./GUI/Tabs/Config.png)
 
 - **Quick Access**: Social media links for Edges For Training.
+
   ![Quick Access](./GUI/Tabs/EdgesQuickAcess.png)
 
 ## Notes
@@ -272,12 +276,14 @@ The Server GUI includes four tabs:
 - **Yocto Image**: Available in the drive link in `yocto_image_Drive_Link.txt`.
 
 ## Video
+
   ![Demo Video](./Video/Embedded_Linux_Project.gif)
 
 ## UML Diagrams
 - **Socket Programming Drivers**: `SocketDriverUML.png` in `Socket Programming Drivers/UML`.
   ![Socket Driver UML](./Socket\ Programming\ Drivers/UML/SocketDriverUML.png)
 - **Server GUI**: `GUI_UML.png` in `GUI`.
+
   ![Server GUI UML](./GUI/GUI_UML.png)
 
 ## Edges For Training
