@@ -85,11 +85,16 @@ MainWindow::MainWindow(const std::string& ip, int port, QWidget* parent)
     tabWidget->addTab(configTab, "Configuration");
 
     // Tab 4: Quick Access
+    // Tab 4: Quick Access
     QWidget* quickAccessTab = new QWidget;
-    QHBoxLayout* quickAccessLayout = new QHBoxLayout(quickAccessTab);
+    QVBoxLayout* mainLayout = new QVBoxLayout(quickAccessTab); // Main vertical layout
 
-    // Add stretch to the left
-    quickAccessLayout->addStretch();
+    // Add stretch to push content to the middle vertically
+    mainLayout->addStretch();
+
+    // First row: Facebook, LinkedIn, Instagram
+    QHBoxLayout* socialMediaLayout = new QHBoxLayout;
+    socialMediaLayout->addStretch(); // Stretch to the left
 
     QPushButton* fbButton = new QPushButton("Facebook");
     fbButton->setFont(QFont("Arial", 15, QFont::Bold));
@@ -97,7 +102,7 @@ MainWindow::MainWindow(const std::string& ip, int port, QWidget* parent)
     connect(fbButton, &QPushButton::clicked, [](){
         QDesktopServices::openUrl(QUrl("https://www.facebook.com/share/19hfjncKaN/"));
     });
-    quickAccessLayout->addWidget(fbButton);
+    socialMediaLayout->addWidget(fbButton);
 
     QPushButton* linkedinButton = new QPushButton("LinkedIn");
     linkedinButton->setFont(QFont("Arial", 15, QFont::Bold));
@@ -105,7 +110,7 @@ MainWindow::MainWindow(const std::string& ip, int port, QWidget* parent)
     connect(linkedinButton, &QPushButton::clicked, [](){
         QDesktopServices::openUrl(QUrl("https://www.linkedin.com/company/edges-for-training/"));
     });
-    quickAccessLayout->addWidget(linkedinButton);
+    socialMediaLayout->addWidget(linkedinButton);
 
     QPushButton* instagramButton = new QPushButton("Instagram");
     instagramButton->setFont(QFont("Arial", 15, QFont::Bold));
@@ -113,12 +118,30 @@ MainWindow::MainWindow(const std::string& ip, int port, QWidget* parent)
     connect(instagramButton, &QPushButton::clicked, [](){
         QDesktopServices::openUrl(QUrl("https://www.instagram.com/edgesfortraining"));
     });
-    quickAccessLayout->addWidget(instagramButton);
+    socialMediaLayout->addWidget(instagramButton);
 
-    // Add stretch to the right
-    quickAccessLayout->addStretch();
+    socialMediaLayout->addStretch(); // Stretch to the right
+    mainLayout->addLayout(socialMediaLayout); // Add first row to main layout
 
-    quickAccessTab->setLayout(quickAccessLayout);
+    // Second row: Personal LinkedIn
+    QHBoxLayout* personalLinkedinLayout = new QHBoxLayout;
+    personalLinkedinLayout->addStretch(); // Stretch to the left
+
+    QPushButton* myLinkedinButton = new QPushButton("Mohamed Newir");
+    myLinkedinButton->setFont(QFont("Arial", 15, QFont::Bold));
+    myLinkedinButton->setIcon(QIcon(":/icons/Resources/icons/linkedin.png"));
+    connect(myLinkedinButton, &QPushButton::clicked, [](){
+        QDesktopServices::openUrl(QUrl("https://www.linkedin.com/in/mohamed-newir-a8a572182"));
+    });
+    personalLinkedinLayout->addWidget(myLinkedinButton);
+
+    personalLinkedinLayout->addStretch(); // Stretch to the right
+    mainLayout->addLayout(personalLinkedinLayout); // Add second row to main layout
+
+    // Add stretch to push content to the middle vertically
+    mainLayout->addStretch();
+
+    quickAccessTab->setLayout(mainLayout);
 
     // Set background
     quickAccessTab->setStyleSheet(R"(
@@ -126,7 +149,7 @@ MainWindow::MainWindow(const std::string& ip, int port, QWidget* parent)
         background-image: url(:/icons/Resources/icons/background.jpg);
         background-repeat: no-repeat;
     }
-    )");
+)");
 
     tabWidget->addTab(quickAccessTab, "Quick Access");
 
