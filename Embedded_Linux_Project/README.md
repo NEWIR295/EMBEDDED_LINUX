@@ -269,7 +269,7 @@ The Server GUI includes four tabs:
 - **Yocto Image**: Available in the drive link in `yocto_image_Drive_Link.txt`.
 
 ## Video
-  ![Demo Video](./Video/demo.gif)
+  ![Demo Video](./Video/Embedded_Linux_Project.gif)
 
 ## UML Diagrams
 - **Socket Programming Drivers**: `SocketDriverUML.png` in `Socket Programming Drivers/UML`.
